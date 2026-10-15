@@ -1,0 +1,8 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "ruff.lint.ignore": [
+        "PIE790",
+        "SIM102",
+        "SIM114"
+    ]
+}
