@@ -1,0 +1,168 @@
+{
+	"Integer Input": {
+		"scope": "python",
+		"prefix": "_int_input",
+		"body": [
+			"int(input())"
+		],
+		"description": "整数を1つ読み込む"
+	},
+	"String Input Strip": {
+		"scope": "python",
+		"prefix": "_input_strip",
+		"body": [
+			"input().strip()"
+		],
+		"description": "文字列を1行読み込み、前後の空白を除く"
+	},
+	"AtCoder Python input template": {
+		"scope": "python",
+		"prefix": "_read_integers",
+		"body": [
+			"def read_integers(offset: int = 0) -> list[int]:",
+			"    \"\"\"整数列を1行読み込む\"\"\"",
+			"    return [x - offset for x in map(int, input().split())]",
+			"",
+			"",
+			"$0read_integers()"
+		],
+		"description": "AtCoder用の標準入力テンプレート"
+	},
+	"itertools accumulate": {
+		"scope": "python",
+		"prefix": "_itertools_accumulate",
+		"body": [
+			"from itertools import accumulate"
+		],
+		"description": "itertools.accumulate をインポート"
+	},
+	"itertools combinations": {
+		"scope": "python",
+		"prefix": "_itertools_combinations",
+		"body": [
+			"from itertools import combinations"
+		],
+		"description": "itertools.combinations をインポート"
+	},
+	"itertools pairwise": {
+		"scope": "python",
+		"prefix": "_itertools_pairwise",
+		"body": [
+			"from itertools import pairwise"
+		],
+		"description": "itertools.pairwise をインポート"
+	},
+	"itertools permutations": {
+		"scope": "python",
+		"prefix": "_itertools_permutations",
+		"body": [
+			"from itertools import permutations"
+		],
+		"description": "itertools.permutations をインポート"
+	},
+	"itertools product": {
+		"scope": "python",
+		"prefix": "_itertools_product",
+		"body": [
+			"from itertools import product"
+		],
+		"description": "itertools.product をインポート"
+	},
+	"bisect bisect_left": {
+		"scope": "python",
+		"prefix": "_bisect_bisect_left",
+		"body": [
+			"from bisect import bisect_left"
+		],
+		"description": "bisect_left をインポート"
+	},
+	"bisect bisect_right": {
+		"scope": "python",
+		"prefix": "_bisect_bisect_right",
+		"body": [
+			"from bisect import bisect_right"
+		],
+		"description": "bisect_right をインポート"
+	},
+	"bisect insort": {
+		"scope": "python",
+		"prefix": "_bisect_insort",
+		"body": [
+			"from bisect import insort"
+		],
+		"description": "insort をインポート"
+	},
+	"functools cache": {
+		"scope": "python",
+		"prefix": "_functools_cache",
+		"body": [
+			"from functools import cache"
+		],
+		"description": "functools.cache をインポート"
+	},
+	"functools lru_cache": {
+		"scope": "python",
+		"prefix": "_functools_lru_cache",
+		"body": [
+			"from functools import lru_cache"
+		],
+		"description": "functools.lru_cache をインポート"
+	},
+	"collections Counter": {
+		"scope": "python",
+		"prefix": "_collections_counter",
+		"body": [
+			"from collections import Counter"
+		],
+		"description": "collections.Counter をインポート"
+	},
+	"collections defaultdict": {
+		"scope": "python",
+		"prefix": "_collections_defaultdict",
+		"body": [
+			"from collections import defaultdict"
+		],
+		"description": "collections.defaultdict をインポート"
+	},
+	"collections deque": {
+		"scope": "python",
+		"prefix": "_collections_deque",
+		"body": [
+			"from collections import deque"
+		],
+		"description": "collections.deque をインポート"
+	},
+	"heapq heappush heappop": {
+		"scope": "python",
+		"prefix": "_heapq",
+		"body": [
+			"from heapq import heappop, heappush"
+		],
+		"description": "heappop, heappush をインポート"
+	},
+	"math gcd": {
+		"scope": "python",
+		"prefix": "_math_gcd",
+		"body": [
+			"from math import gcd"
+		],
+		"description": "math.gcd をインポート"
+	},
+	"math lcm": {
+		"scope": "python",
+		"prefix": "_math_lcm",
+		"body": [
+			"from math import lcm"
+		],
+		"description": "math.lcm をインポート"
+	},
+	"sys recursionlimit": {
+		"scope": "python",
+		"prefix": "_sys_recursionlimit",
+		"body": [
+			"import sys",
+			"sys.setrecursionlimit(10**6)"
+		],
+		"description": "再帰上限を 10^6 に設定"
+	}
+}
