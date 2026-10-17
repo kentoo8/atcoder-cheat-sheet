@@ -5,21 +5,21 @@ from functools import cache
 input = sys.stdin.readline
 
 
-def read_integers() -> list[int]:
+def read_integers():
     """整数列を1行読み込み、リストとして返す"""
     return list(map(int, input().split()))
 
 
-def read_int_matrix(n_rows: int) -> list[list[int]]:
+def read_int_matrix(n_rows):
     """整数列をn_rows行読み込み、2次元リストとして返す"""
     return [read_integers() for _ in range(n_rows)]
 
 
-def solve_knapsack(value_weights: list[list[int]], max_weight: int) -> int:
+def solve_knapsack(value_weights, max_weight):
     n_items = len(value_weights)
 
     @cache
-    def get_max_value_from(item_index: int, remaining_weight: int) -> int:
+    def get_max_value_from(item_index, remaining_weight):
         """item_index番目以降のアイテムだけを使って、残り容量 remaining_weight で得られる最高valueを返す"""
 
         if item_index == n_items:
@@ -46,7 +46,7 @@ def solve_knapsack(value_weights: list[list[int]], max_weight: int) -> int:
     return get_max_value_from(item_index=0, remaining_weight=max_weight)
 
 
-def main() -> None:
+def main():
     n_items, max_weight = read_integers()
     value_weights = read_int_matrix(n_items)
 

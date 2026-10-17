@@ -3,17 +3,17 @@ import sys
 input = sys.stdin.readline
 
 
-def read_integers() -> list[int]:
+def read_integers():
     """整数列を1行読み込み、リストとして返す"""
     return list(map(int, input().split()))
 
 
-def read_int_matrix(n_rows: int) -> list[list[int]]:
+def read_int_matrix(n_rows):
     """整数列をn_rows行読み込み、2次元リストとして返す"""
     return [read_integers() for _ in range(n_rows)]
 
 
-def get_skyline_points_from_y_desc(points) -> list[list[int]]:
+def get_skyline_points_from_y_desc(points):
     """
     y 降順に並んだ点 [x, y] から、右上から支配されない点だけを返す。
 
@@ -64,7 +64,7 @@ def get_skyline_points_from_y_desc(points) -> list[list[int]]:
     return skyline
 
 
-def get_skyline_points_from_y_asc(points: list[list[int]]) -> list[list[int]]:
+def get_skyline_points_from_y_asc(points):
     """
     y 昇順に並んだ点 [x, y] から、右上から支配されない点だけを返す。
 

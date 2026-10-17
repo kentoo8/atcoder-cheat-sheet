@@ -1,10 +1,10 @@
 class UnionFind:
-    def __init__(self, n: int):
+    def __init__(self, n):
         """n 個の要素を、それぞれ別の集合として初期化する"""
         self._parent = [-1] * n
         self._size = [1] * n  # 根に対してのみ、正しい集合サイズを保持する
 
-    def find_root(self, v: int) -> int:
+    def find_root(self, v):
         """v が属する集合の代表元を返す"""
         path = []
         while self._parent[v] != -1:
@@ -18,7 +18,7 @@ class UnionFind:
 
         return root
 
-    def unite(self, u: int, v: int) -> bool:
+    def unite(self, u, v):
         """
         u と v の属する集合を併合して True を返す。
         ただし、すでに同じ集合なら何もせず False を返す。
@@ -39,11 +39,11 @@ class UnionFind:
         else:
             return False
 
-    def in_same_set(self, u: int, v: int) -> bool:
+    def in_same_set(self, u, v):
         """u と v が同じ集合に属するかを返す"""
         return self.find_root(u) == self.find_root(v)
 
-    def size(self, v: int) -> int:
+    def size(self, v):
         """v が属する集合の要素数を返す"""
         root = self.find_root(v)
         return self._size[root]

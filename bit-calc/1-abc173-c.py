@@ -3,7 +3,7 @@ import sys
 input = sys.stdin.readline
 
 
-def read_integers() -> list[int]:
+def read_integers():
     """
     1行の整数列を読み込み、リストとして返す。
 
@@ -14,7 +14,7 @@ def read_integers() -> list[int]:
     return list(map(int, input().split()))
 
 
-def read_board(height: int) -> list[list[str]]:
+def read_board(height):
     """
     height 行の文字列を読み込み、2次元リストとして返す。
 

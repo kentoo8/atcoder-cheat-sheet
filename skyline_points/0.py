@@ -4,16 +4,16 @@ from bisect import bisect_right
 input = sys.stdin.readline
 
 
-def read_integers() -> list[int]:
+def read_integers():
     return list(map(int, input().split()))
 
 
-def read_int_matrix(n_rows: int) -> list[list[int]]:
+def read_int_matrix(n_rows):
     """整数列をn_rows行読み込み、2次元リストとして返す"""
     return [read_integers() for _ in range(n_rows)]
 
 
-def get_skyline_points_from_y_x_desc(points: list[list[int]]) -> list[list[int]]:
+def get_skyline_points_from_y_x_desc(points):
     """
     (y, x) 降順に並んだ点 [x, y] から、
     右上から支配されない点だけを返す。
@@ -43,7 +43,7 @@ def get_skyline_points_from_y_x_desc(points: list[list[int]]) -> list[list[int]]
         ●: 残る点
         x: 取り除かれる点
     """
-    skyline: list[list[int]] = []
+    skyline = []
     max_x_seen = -(10**30)
 
     for x, y in points:

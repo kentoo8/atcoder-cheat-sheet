@@ -1,4 +1,4 @@
-def is_prime(n: int) -> bool:
+def is_prime(n):
     """n が素数なら True、そうでなければ False を返す。"""
     if n < 2:
         return False

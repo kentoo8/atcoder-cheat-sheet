@@ -4,17 +4,17 @@ from collections import defaultdict, deque
 input = sys.stdin.readline
 
 
-def read_integers() -> list[int]:
+def read_integers():
     """整数列を1行読み込み、リストとして返す"""
     return list(map(int, input().split()))
 
 
-def read_int_matrix(n_rows: int) -> list[list[int]]:
+def read_int_matrix(n_rows):
     """整数列をn_rows行読み込み、2次元リストとして返す"""
     return [read_integers() for _ in range(n_rows)]
 
 
-def build_neighbors(edges: list[list[int]]) -> dict[int, list[int]]:
+def build_neighbors(edges):
     """
     各頂点をkey, 隣接する頂点リストをvalueに持つ辞書を返す
 
@@ -47,9 +47,9 @@ def build_neighbors(edges: list[list[int]]) -> dict[int, list[int]]:
 
 
 def build_distances_from(
-    start_vertex: int,
-    neighbors: dict[int, list[int]],
-) -> dict[int, int]:
+    start_vertex,
+    neighbors,
+):
     """
     start_vertexからの各点への距離をBFSで計算する
 
@@ -92,7 +92,7 @@ def build_distances_from(
     return distances
 
 
-def find_max_distance_item(distances: dict[int, int]) -> tuple[int, int]:
+def find_max_distance_item(distances):
     """
     distances の中で最も距離が大きい点（のうちの1つ）とその距離の組を返す
 
@@ -113,8 +113,8 @@ def find_max_distance_item(distances: dict[int, int]) -> tuple[int, int]:
 
 
 def find_farthest_vertex_from(
-    start_vertex: int, neighbors: dict[int, list[int]]
-) -> tuple[int, int]:
+    start_vertex, neighbors
+):
     """
     start_vertex から最も遠い点（のうちの1つ）とその距離の組を返す
 
@@ -137,7 +137,7 @@ def find_farthest_vertex_from(
     return farthest_vertex, max_distance
 
 
-def find_diameter_and_endpoints(edges: list[list[int]]) -> tuple[int, tuple[int, int]]:
+def find_diameter_and_endpoints(edges):
     """与えられた木(edges表示)の直径と、それを実現する端点ペアとの組を返す"""
     if len(edges) == 1:
         u, v = edges[0]
@@ -162,7 +162,7 @@ def find_diameter_and_endpoints(edges: list[list[int]]) -> tuple[int, tuple[int,
     return diameter, (endpoint_1, endpoint_2)
 
 
-def main() -> None:
+def main():
     N = int(input())
     edges = read_int_matrix(N - 1)
 
