@@ -1,4 +1,4 @@
-# 参照元（コード・スニペット）: https://github.com/kentoo8/atcoder-cheat-sheet/tree/281462264e7f2969b3e0fc159145029b9ea50c9c
+# 参照元（コード・スニペット）: https://github.com/kentoo8/atcoder-cheat-sheet/tree/64cc7805b99401d97af6537efd1b5fdcad029d39
 
 
 def read_integers(offset: int = 0) -> list[int]:
