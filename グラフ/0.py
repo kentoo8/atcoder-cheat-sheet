@@ -1,29 +1,18 @@
-import sys
-
-input = sys.stdin.readline
-
-
-def read_integers() -> list[int]:
+def read_integers(offset: int = 0) -> list[int]:
     """整数列を1行読み込む"""
-    return list(map(int, input().split()))
+    return [x - offset for x in map(int, input().split())]
 
 
 def read_undirected_graph(
     n_vertices: int,
     n_edges: int,
-    offset: int = 1,
+    offset: int = 0,
 ) -> list[list[int]]:
-    """
-    標準入力から、無向グラフを隣接リストとして読み込む。
-
-    返り値 graph では、graph[i] が頂点 i の隣接頂点一覧を表す。
-    """
+    """標準入力から、無向グラフを隣接リストとして読み込む。"""
     graph = [[] for _ in range(n_vertices)]
 
     for _ in range(n_edges):
-        u, v = read_integers()
-        u -= offset
-        v -= offset
+        u, v = read_integers(offset)
 
         graph[u].append(v)
         graph[v].append(u)
@@ -68,6 +57,8 @@ n_vertices, n_edges = read_integers()
 graph = read_undirected_graph(
     n_vertices=n_vertices,
     n_edges=n_edges,
+    offset=1,
 )
 parents = build_dfs_tree(graph=graph)
+print(graph)
 print(parents)
