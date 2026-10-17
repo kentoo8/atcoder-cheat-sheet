@@ -7,7 +7,7 @@ from heapq import heappop, heappush
 input = sys.stdin.readline
 
 
-def read_integers(offset: int = 0) -> list[int]:
+def read_integers(offset=0):
     """整数列を1行読み込む"""
     return [x - offset for x in map(int, input().split())]
 

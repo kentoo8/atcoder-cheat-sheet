@@ -1,16 +1,16 @@
-def get_binary_sequences(length: int) -> list[list[int]]:
+def get_binary_sequences(length):
     """
     0, 1からなる指定長のリスト全体を返す
     itertools.product の手作り版
     """
-    sequences: list[list[int]] = []
-    sequence: list[int] = []
+    sequences = []
+    sequence = []
 
-    def collect_sequence_dfs() -> None:
-        def is_complete() -> bool:
+    def collect_sequence_dfs():
+        def is_complete():
             return len(sequence) == length
 
-        def append_sequence() -> None:
+        def append_sequence():
             sequences.append(sequence.copy())
 
         if is_complete():

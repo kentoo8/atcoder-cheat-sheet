@@ -1,30 +1,30 @@
 N = 3
 
 
-def evaluate(state: int) -> int:
+def evaluate(state):
     """現在の状態を答えとして評価する。"""
     return state
 
 
-def is_finished(step: int) -> bool:
+def is_finished(step):
     """すべての要素について判断し終えたか。"""
     return step == N
 
 
-def make_next_state(state: int, step: int) -> int:
+def make_next_state(state, step):
     """step 番目の値を選んだ場合の次の状態を作る。"""
     return state + step
 
 
-def choose_best(results: list[int]) -> int:
+def choose_best(results):
     """子の探索結果から最良のものを選ぶ。"""
     return max(results)
 
 
 def dfs(
-    step: int,
-    state: int,
-) -> int:
+    step,
+    state,
+):
     """
     step 以降について探索し、
     この状態から得られる最大値を返す。

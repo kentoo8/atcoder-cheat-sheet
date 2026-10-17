@@ -1,4 +1,4 @@
-def run_length_encoding(S: str) -> list[tuple[str, int]]:
+def run_length_encoding(S):
     """
     文字列を run-length 圧縮（連長圧縮）する。
 

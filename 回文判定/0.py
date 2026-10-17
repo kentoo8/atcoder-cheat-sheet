@@ -1,4 +1,4 @@
-def is_palindromic(xs: list | str) -> bool:
+def is_palindromic(xs):
     """回文判定"""
     n = len(xs)
 

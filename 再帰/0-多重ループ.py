@@ -1,7 +1,7 @@
 S = "ab"
 
 
-def rec3() -> list[str]:
+def rec3():
     ans = []
     for s1 in S:
         for s2 in S:
@@ -14,7 +14,7 @@ def rec3() -> list[str]:
 print(rec3())
 
 
-def rec3_() -> list[str]:
+def rec3_():
     path0 = ""
     ans = []
 
@@ -34,7 +34,7 @@ def rec3_() -> list[str]:
 print(rec3_())
 
 
-def rec3__(path: str = "") -> list[str]:
+def rec3__(path=""):
     """rec3_を再帰化"""
     if len(path) == 3:
         return [path]
@@ -52,7 +52,7 @@ def rec3__(path: str = "") -> list[str]:
 print(rec3__())
 
 
-def rec(path: str = "", length: int = 3) -> list[str]:
+def rec(path="", length=3):
     """探索木の深さを変数化"""
     if len(path) == length:
         return [path]
