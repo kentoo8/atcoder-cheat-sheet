@@ -81,6 +81,8 @@ def build_euler_tour(
 
 tour, in_time, out_time = build_euler_tour(graph)
 
-print()
 for v in range(N):
-    print(tour[in_time[v] : out_time[v]])
+    l, r = in_time[v], out_time[v]
+    print()
+    print(l, r)
+    print(tour[l:r])
