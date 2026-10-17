@@ -1,4 +1,4 @@
-def count_subarrays(nums: list[int], target_val: int) -> int:
+def count_subarrays(nums, target_val):
     """和がちょうど target_val である連続部分列の個数を返す。
 
     nums は非負整数列を想定する。

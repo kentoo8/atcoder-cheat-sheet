@@ -1,4 +1,4 @@
-def gcd(a: int, b: int) -> int:
+def gcd(a, b):
     """a, bの最大公約数"""
     while b:
         a, b = b, a % b

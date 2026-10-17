@@ -1,13 +1,13 @@
-def read_integers(offset: int = 0) -> list[int]:
+def read_integers(offset=0):
     """整数列を1行読み込む"""
     return [x - offset for x in map(int, input().split())]
 
 
 def read_undirected_graph(
-    n_vertices: int,
-    n_edges: int,
-    offset: int = 0,
-) -> list[list[int]]:
+    n_vertices,
+    n_edges,
+    offset=0,
+):
     """標準入力から、無向グラフを隣接リストとして読み込む。"""
     graph = [[] for _ in range(n_vertices)]
 
@@ -21,9 +21,9 @@ def read_undirected_graph(
 
 
 def build_dfs_tree(
-    graph: list[list[int]],
-    root: int = 0,
-) -> list[int]:
+    graph,
+    root=0,
+):
     """
     DFS木の親を返す。
 

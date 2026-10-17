@@ -1,4 +1,4 @@
-def inverse(P: list[int], start=0) -> list[int]:
+def inverse(P, start=0):
     """順列の逆元を返す"""
     P = [x - start for x in P]  # 0-index化
 
@@ -11,7 +11,7 @@ def inverse(P: list[int], start=0) -> list[int]:
     return invP
 
 
-def swap(P: list, i: int, j: int, start=0) -> None:
+def swap(P, i, j, start=0):
     """位置i, jの要素を入れ替える"""
     i -= start
     j -= start

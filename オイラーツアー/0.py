@@ -1,16 +1,16 @@
 # 参照: https://info.atcoder.jp/entry/algorithm_lectures/euler_tour_technique
 
 
-def read_integers(offset: int = 0) -> list[int]:
+def read_integers(offset=0):
     """整数列を1行読み込む"""
     return [x - offset for x in map(int, input().split())]
 
 
 def read_undirected_graph(
-    n_vertices: int,
-    n_edges: int,
-    offset: int = 0,
-) -> list[list[int]]:
+    n_vertices,
+    n_edges,
+    offset=0,
+):
     """標準入力から、無向グラフを隣接リストとして読み込む。"""
     graph = [[] for _ in range(n_vertices)]
 
@@ -32,8 +32,8 @@ graph = read_undirected_graph(
 
 
 def build_euler_tour(
-    graph: list[list[int]],
-    start: int = 0,
+    graph,
+    start=0,
 ):
     """根付き木のDFS行きがけ順によるオイラーツアーを非再帰で構築する。
 

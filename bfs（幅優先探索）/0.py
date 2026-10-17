@@ -1,7 +1,7 @@
 from collections import deque
 
 
-def bfs_1dim() -> None:
+def bfs_1dim():
     As = [-1, -1, 0, 0, -1, -1, -1, -1, -1, 0]
     # ほしい出力: [2, 1, 0, 0, 1, 2, 3, 2, 1, 0]
 

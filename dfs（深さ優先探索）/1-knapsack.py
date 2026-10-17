@@ -9,18 +9,18 @@ values = [4, 20, 1, 5, 6, 2, 3, 4, 5, 5]
 """
 
 
-def get_best_items(weights: list[int], values: list[int], max_weight: int) -> dict:
+def get_best_items(weights, values, max_weight):
     """条件を満たす最適なアイテムの選び方とその時の合計valueを返す"""
     # 状態
     best_state = {"value": 0, "weight": 0, "item_indices": []}
 
     # DFS
     def choose_items_dfs(
-        current_item_index: int,
-        current_weight: int,
-        current_value: int,
-        current_item_indices: list[int],
-    ) -> None:
+        current_item_index,
+        current_weight,
+        current_value,
+        current_item_indices,
+    ):
         """現在の状態以降から、最適なitemの選び方を全探索する"""
         # 終了条件
         if current_item_index == n_items:
