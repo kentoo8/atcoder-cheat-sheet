@@ -1,4 +1,4 @@
-# 参照元（コード・スニペット）: https://github.com/kentoo8/atcoder-cheat-sheet
+# 参照: https://info.atcoder.jp/entry/algorithm_lectures/euler_tour_technique
 
 
 def read_integers(offset: int = 0) -> list[int]:
