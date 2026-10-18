@@ -1,4 +1,12 @@
 {
+	"Yes No Output": {
+		"scope": "python",
+		"prefix": "_yes_no",
+		"body": [
+			"print(\"Yes\") if judge else print(\"No\")"
+		],
+		"description": "judge が真なら Yes、偽なら No を出力する"
+	},
 	"Integer Input": {
 		"scope": "python",
 		"prefix": "_int_input",
