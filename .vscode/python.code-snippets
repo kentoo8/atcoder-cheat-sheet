@@ -1,4 +1,12 @@
 {
+	"Space Separated Output": {
+		"scope": "python",
+		"prefix": "_print_nums",
+		"body": [
+			"print(\" \".join(str(x) for x in ${1:nums}))$0"
+		],
+		"description": "数列を空白区切りで1行に出力する"
+	},
 	"Yes No Output": {
 		"scope": "python",
 		"prefix": "_yes_no",
