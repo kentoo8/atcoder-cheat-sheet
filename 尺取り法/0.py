@@ -1,51 +1,43 @@
-def count_subarrays(nums, target_val):
-    """和がちょうど target_val である連続部分列の個数を返す。
+# https://atcoder.jp/contests/abc032/tasks/abc032_c
+# 問題: 非負整数列 nums の連続部分列で積が K 以下のもののうち、長さが一番長いものの長さを求めよ.
+# 解法: 尺取り法
+# 計算速度: O(N)
 
-    nums は非負整数列を想定する。
-    """
 
-    if target_val < 0:
+def read_integers(offset: int = 0) -> list[int]:
+    """整数列を1行読み込む"""
+    return [x - offset for x in map(int, input().split())]
+
+
+N, K = read_integers()
+nums = [int(input()) for _ in range(N)]
+
+
+def main():
+    if 0 in nums:
+        return N
+
+    if K == 0:
         return 0
 
-    if target_val == 0:
-        ans = 0
-        zero_run = 0
+    # 尺取り法
+    l = 0
+    r = 0
 
-        for x in nums:
-            if x == 0:
-                zero_run += 1
-                ans += zero_run
-            else:
-                zero_run = 0
-
-        return ans
-
+    prd = 1
     ans = 0
 
-    left_target = 0
-    left_smaller = 0
+    while r < N:
+        prd *= nums[r]
+        r += 1
 
-    sum_target = 0
-    sum_smaller = 0
+        while prd > K:
+            prd //= nums[l]
+            l += 1
 
-    for right in range(len(nums)):
-        x = nums[right]
-
-        sum_target += x
-        sum_smaller += x
-
-        # 和を target_val 以下にする最小の左端
-        while sum_target > target_val:
-            sum_target -= nums[left_target]
-            left_target += 1
-
-        # 和を target_val - 1 以下にする最小の左端
-        while sum_smaller >= target_val:
-            sum_smaller -= nums[left_smaller]
-            left_smaller += 1
-
-        # right を右端として、
-        # 和がちょうど target_val になる左端の個数
-        ans += left_smaller - left_target
+        ans = max(ans, r - l)
 
     return ans
+
+
+print(main())
