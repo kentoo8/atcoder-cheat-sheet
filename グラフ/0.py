@@ -1,6 +1,7 @@
-def read_integers(offset=0):
-    """整数列を1行読み込む"""
-    return [x - offset for x in map(int, input().split())]
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
 def read_undirected_graph(
@@ -12,7 +13,7 @@ def read_undirected_graph(
     graph = [[] for _ in range(n_vertices)]
 
     for _ in range(n_edges):
-        u, v = read_integers(offset)
+        u, v = read_values(offset)
 
         graph[u].append(v)
         graph[v].append(u)
@@ -53,7 +54,7 @@ def build_dfs_tree(
     return parents
 
 
-n_vertices, n_edges = read_integers()
+n_vertices, n_edges = read_values()
 graph = read_undirected_graph(
     n_vertices=n_vertices,
     n_edges=n_edges,

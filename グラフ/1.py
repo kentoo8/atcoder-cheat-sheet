@@ -4,14 +4,15 @@ from collections import defaultdict, deque
 input = sys.stdin.readline
 
 
-def read_integers():
-    """整数列を1行読み込み、リストとして返す"""
-    return list(map(int, input().split()))
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
 def read_int_matrix(n_rows):
     """整数列をn_rows行読み込み、2次元リストとして返す"""
-    return [read_integers() for _ in range(n_rows)]
+    return [read_values() for _ in range(n_rows)]
 
 
 def build_neighbors(edges):

@@ -6,9 +6,10 @@ import sys
 input = sys.stdin.readline
 
 
-def read_integers(offset=0):
-    """整数列を1行読み込む"""
-    return [x - offset for x in map(int, input().split())]
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
 class UnionFind:
@@ -62,11 +63,11 @@ class UnionFind:
         return self._size[root]
 
 
-n_vertices, n_edges = read_integers()
+n_vertices, n_edges = read_values()
 
 edges = []
 for _ in range(n_edges):
-    u, v, dist = read_integers()
+    u, v, dist = read_values()
     edges.append([dist, u, v])
 
 edges.sort()

@@ -4,13 +4,15 @@ from bisect import bisect_right
 input = sys.stdin.readline
 
 
-def read_integers():
-    return list(map(int, input().split()))
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
 def read_int_matrix(n_rows):
     """整数列をn_rows行読み込み、2次元リストとして返す"""
-    return [read_integers() for _ in range(n_rows)]
+    return [read_values() for _ in range(n_rows)]
 
 
 def get_skyline_points_from_y_x_desc(points):
@@ -57,7 +59,7 @@ N = int(input())
 height_leaves = read_int_matrix(N)
 
 Q = int(input())
-times = read_integers()
+times = read_values()
 
 
 height_leaves.sort(key=lambda x: (x[1], x[0]), reverse=True)

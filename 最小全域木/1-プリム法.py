@@ -7,18 +7,19 @@ from heapq import heappop, heappush
 input = sys.stdin.readline
 
 
-def read_integers(offset=0):
-    """整数列を1行読み込む"""
-    return [x - offset for x in map(int, input().split())]
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
-n_vertices, n_edges = read_integers()
+n_vertices, n_edges = read_values()
 
 # graph[v]: 頂点 v に隣接する点 u と距離 dist の組 (dist, u) のリスト
 graph = [[] for _ in range(n_vertices)]
 
 for _ in range(n_edges):
-    v_i, v_j, d = read_integers()
+    v_i, v_j, d = read_values()
     graph[v_i].append((d, v_j))
     graph[v_j].append((d, v_i))
 

@@ -5,9 +5,10 @@ from heapq import heappop, heappush
 input = sys.stdin.readline
 
 
-def read_integers(offset=0):
-    """整数列を1行読み込む"""
-    return [x - offset for x in map(int, input().split())]
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
 def dijkstra(graph, start_vertex, goal_vertex):
@@ -54,12 +55,12 @@ def dijkstra(graph, start_vertex, goal_vertex):
     return ans if ans < INF else -1
 
 
-n_vertices, n_edges = read_integers()
+n_vertices, n_edges = read_values()
 
 graph = [[] for _ in range(n_vertices)]
 
 for _ in range(n_edges):
-    u, v, dist = read_integers()
+    u, v, dist = read_values()
     graph[u].append((dist, v))
 
 

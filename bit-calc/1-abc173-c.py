@@ -3,15 +3,10 @@ import sys
 input = sys.stdin.readline
 
 
-def read_integers():
-    """
-    1行の整数列を読み込み、リストとして返す。
-
-    例:
-        入力: 3 5 7
-        戻り値: [3, 5, 7]
-    """
-    return list(map(int, input().split()))
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
 def read_board(height):
@@ -32,7 +27,7 @@ def read_board(height):
     return [list(input().strip()) for _ in range(height)]
 
 
-H, W, K = read_integers()
+H, W, K = read_values()
 board = read_board(H)
 
 ans = 0

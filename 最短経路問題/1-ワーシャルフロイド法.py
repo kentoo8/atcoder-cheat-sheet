@@ -4,12 +4,13 @@ import sys
 input = sys.stdin.readline
 
 
-def read_integers(offset=0):
-    """整数列を1行読み込む"""
-    return [x - offset for x in map(int, input().split())]
+def read_values(offset=0, type=list, cast=int):
+    """空白区切りの値を1行読み込む"""
+    values = (cast(x) - offset if cast is int else cast(x) for x in input().split())
+    return type(values)
 
 
-n_vertices, n_edges = read_integers()
+n_vertices, n_edges = read_values()
 
 # ワーシャル=フロイド法
 
@@ -20,7 +21,7 @@ for i in range(n_vertices):
     dp[i][i] = 0
 
 for _ in range(n_edges):
-    u, v, dist = read_integers()
+    u, v, dist = read_values()
     dp[u][v] = dist
 
 for k in range(n_vertices):
