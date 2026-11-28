@@ -32,7 +32,7 @@ def main():
             # [x-1, r) の最大値が y 未満である最大の r を求める。
             # 右に伸ばすと最大値は下がらないので、r が最初に y 以上となる位置。
             # 見つからなければ r = N。どちらも r + 1 が出力する答え。
-            r = seg.max_right(x - 1, lambda maximum: maximum < y)
+            r = seg.max_right(x - 1, lambda maximum, y=y: maximum < y)
             print(r + 1)
 
 
